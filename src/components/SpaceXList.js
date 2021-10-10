@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from "react-router-dom"
 const SpaceXLists = ({ spaceX }) => {
 
     return (
@@ -7,7 +7,7 @@ const SpaceXLists = ({ spaceX }) => {
             <div className="card border mb-5">
                 <img src={spaceX.links.mission_patch_small} alt="Mission Logo" className="card-img-top p-4" width="250" height="280"/>
                 <div className="card-body">
-                    <h5 className="card-title h6">{spaceX.mission_name}</h5>
+                    <Link to={`/mission/${spaceX.mission_name}`} className="card-title h6">{spaceX.mission_name}</Link>
                     <p><b>Mission id: </b> {spaceX.mission_id.length ? spaceX.mission_id : "No ID"}</p>
                     <p><b>Launch year: </b> {spaceX.launch_year}</p>
                     <p><b>Flight number: </b>{spaceX.flight_number}</p>

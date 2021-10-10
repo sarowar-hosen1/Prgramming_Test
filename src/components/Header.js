@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.png"
 
 const Header = () => {
     return (
-        <header>
+        <header className="">
             <nav className="navbar navbar-dark bg-dark justify-content-between px-4">
                 <div className="container">
                     <a className="navbar-brand" href="/">

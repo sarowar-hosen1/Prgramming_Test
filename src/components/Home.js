@@ -15,11 +15,19 @@ const Home = () => {
     //fetch data and update state
     useEffect(() => {
         dispatch(spaceXRequest())
-        fetch("https://api.spacexdata.com/v3/launches")
-            .then(res => res.json())
-            .then(data => dispatch(spaceXSuccess(data)))
-            .catch(error => dispatch(spaceXError(error)))
+        async function fetchData() {
+            try {
+                await fetch("https://api.spacexdata.com/v3/launches")
+                    .then(res => res.json())
+                    .then(data => dispatch(spaceXSuccess(data)))
+                    .catch(error => dispatch(spaceXError(error)))
+            } catch (error) {
+                dispatch(spaceXError("Failed to data load"))
+            }
+        }
+        fetchData();
     }, [dispatch])
+
 
     // handle searchResult
     const handleSearch = (value) => {
@@ -79,7 +87,7 @@ const Home = () => {
     }
 
     return (
-        <div className="container p-4">
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-md-3">
                     <FilterBar
@@ -107,7 +115,10 @@ const Home = () => {
                             filteredData.length > 0 ?
                                 filteredData.map((spaceX) => <SpaceXLists spaceX={spaceX} key={spaceX.mission_name}></SpaceXLists>)
                                 :
-                                <h5 className="text-center">No data found!</h5>
+                                data.length > 0 ?
+                                data.map((spaceX) => <SpaceXLists spaceX={spaceX} key={spaceX.mission_name}></SpaceXLists>)
+                                :
+                                <h5>No data found</h5>
                         }
                     </div>
                 </div>

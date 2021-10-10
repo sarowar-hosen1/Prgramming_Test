@@ -6,7 +6,7 @@ const SpaceXLists = ({ spaceX }) => {
 
     return (
         <div className="col-md-4">
-            <div className="card border mb-5">
+            <div className="card border-right-1 mb-5">
                 <img
                     src={spaceX.links.mission_patch_small ? spaceX.links.mission_patch_small: defaultImage}
                     className="card-img-top p-4"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 const years = [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
 
 const Filterbar = (props) => {
@@ -12,9 +12,10 @@ const Filterbar = (props) => {
         handleFilterClear
     } = props;
 
+
     return (
-        <div className="p-3 h-100">
-            <h3 className="text-center border-bottom">Filters</h3>
+        <div className="px-4 h-100">
+            <h5 className="text-uppercase border-bottom">Filters</h5>
 
             <div className="mt-4">
                 <h6 className="text-muted text-uppercase">Search</h6>

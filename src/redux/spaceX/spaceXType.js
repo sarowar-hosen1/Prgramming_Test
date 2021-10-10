@@ -1,0 +1,3 @@
+export const SPACEX_REQUEST = "SPACEX_REQUEST";
+export const SPACEX_SUCCCESS = "SPACEX_SUCCCESS";
+export const SPACEX_ERROR = "SPACEX_ERROR";

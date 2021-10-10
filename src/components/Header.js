@@ -5,9 +5,11 @@ const Header = () => {
     return (
         <header>
             <nav className="navbar navbar-dark bg-dark justify-content-between px-4">
-                <a className="navbar-brand" href="/">
-                    <img src={logo} alt="" width="200" height="30"/>
-                </a>
+                <div className="container">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="" width="200" height="30" />
+                    </a>
+                </div>
             </nav>
         </header>
     );

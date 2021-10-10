@@ -8,9 +8,9 @@ const SpaceXLists = ({ spaceX }) => {
                 <img src={spaceX.links.mission_patch_small} alt="Mission Logo" className="card-img-top p-4" width="250" height="280"/>
                 <div className="card-body">
                     <Link to={`/mission/${spaceX.mission_name}`} className="card-title h6">{spaceX.mission_name}</Link>
-                    <p><b>Mission id: </b> {spaceX.mission_id.length ? spaceX.mission_id : "No ID"}</p>
-                    <p><b>Launch year: </b> {spaceX.launch_year}</p>
-                    <p><b>Flight number: </b>{spaceX.flight_number}</p>
+                    <p className="my-1"><b>Mission id: </b> {spaceX.mission_id.length ? spaceX.mission_id : "No ID"}</p>
+                    <p className="my-1"><b>Launch year: </b> {spaceX.launch_year}</p>
+                    <p className="my-1"><b>Flight number: </b>{spaceX.flight_number}</p>
                     {
                         spaceX.launch_success ?
                             <p className="text-success">Launch successfully</p>
